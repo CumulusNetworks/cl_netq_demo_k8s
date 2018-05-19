@@ -1,7 +1,7 @@
 # cl_netq_demo_k8s
 Cumulus Vagrant file and scripts for NetQ with Kubernetes Demo
 
-his Github repository contains the Vagrantfile and scripts necessary to set up a typical data center topology using Cumulus Linux.  It clones a playbook to set up a Layer 3 BGP environment for container networking and uses Kubernetes (k8s) for orchestration.  
+This Github repository contains the Vagrantfile and scripts necessary to set up a typical data center topology using Cumulus Linux.  It clones a playbook to set up a Layer 3 BGP environment for container networking and uses Kubernetes (k8s) for orchestration.  
 
 This repository includes a Vagrant file that will set up a demo topology as depicted below.  The demo topology is identical to [Cumulus in the Cloud](https://cumulusnetworks.com/products/cumulus-in-the-cloud/).  
 
