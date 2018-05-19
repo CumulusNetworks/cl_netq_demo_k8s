@@ -69,7 +69,7 @@ Ubuntu 16.04
 
 This demo runs on a spine-leaf topology running BGP unnumbered with four attached hosts.  The oob-mgmt-server is connected to an out-of-band management network, along with all eth0 interfaces. 
 
-![NetQ with K8S Demo Topology](https://github.com/CumulusNetworks/cldemo-netq-k8s/blob/master/netq_k8s_demo.png)
+![NetQ with K8S Demo Topology](https://github.com/CumulusNetworks/cl_netq_demo_k8s/blob/master/topology.png)
 
 The following IP addresses are the loopback addresses on the hosts:
 server01: 10.0.0.31  (master)
