@@ -92,7 +92,7 @@ We use K8S to deploy 2 services - apache1 and apache2, which are just httpd. Eac
 Any NetQ command can be performed from any node in the network.
 
 
-      cumulus@oob-mgmt-server:~$netq show kubernetes cluster
+    cumulus@oob-mgmt-server:~$netq show kubernetes cluster
     
     Matching kube_cluster records:
     Master                   Cluster Name     Controller Status    Scheduler Status Nodes
@@ -110,7 +110,7 @@ Next, look at the deployment instances
 
 Look at where they are deployed:     
 
-         cumulus@oob-mgmt-server:~$ netq show kubernetes pod label apache2
+    cumulus@oob-mgmt-server:~$ netq show kubernetes pod label apache2
     
     Matching kube_pod records:
     Master                   Namespace    Name                 IP               Node         Labels               Status   Containers               Last Changed
@@ -130,7 +130,7 @@ Look at where they are deployed:
 Look at how a service is connected to the network
 
     
-          cumulus@oob-mgmt-server:~$ netq show kubernetes deployment name apache1 connectivity
+    cumulus@oob-mgmt-server:~$ netq show kubernetes deployment name apache1 connectivity
     apache1 -- apache1-86dd4b757f-lx9mt -- server03:eth1:eth1 -- swp1:swp1:leaf03
                                         -- server03:eth2:eth2 -- swp1:swp1:leaf04
             -- apache1-86dd4b757f-9n8cd -- server03:eth1:eth1 -- swp1:swp1:leaf03
