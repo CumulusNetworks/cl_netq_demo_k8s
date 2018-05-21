@@ -87,9 +87,12 @@ We run FRR on the host that advertises the servers loopback addresses and the co
 We use K8S to deploy 2 services - apache1 and apache2, which are just httpd. Each service deploys 5 containers. We do not specify which servers they are deployed on, k8s decides that.
 
 
+## Viewing the Results ##
+
+Any NetQ command can be performed from any node in the network.
 
 
-      cumulus@server01:~$ netq show kubernetes cluster
+      cumulus@oob-mgmt-server:~$netq show kubernetes cluster
     
     Matching kube_cluster records:
     Master                   Cluster Name     Controller Status    Scheduler Status Nodes
@@ -139,7 +142,7 @@ Look at how a service is connected to the network
             -- apache1-86dd4b757f-rnmvh -- server03:eth1:eth1 -- swp1:swp1:leaf03
                                         -- server03:eth2:eth2 -- swp1:swp1:leaf04
 
-Drain a node from the master and view the changes:
+Using Kubctl, drain a node from the master and view the changes.  This must be done from the master k8s node.  ssh to server01:
 
     cumulus@server01:~$ kubectl drain server03 --delete-local-data --force --ignore-daemonsets
     node "server03" cordoned
@@ -149,7 +152,7 @@ Drain a node from the master and view the changes:
     pod "apache1-86dd4b757f-lx9mt" evicted
     node "server03" drained
 
-View the changes:
+Using NetQ, view the changes:
 
     cumulus@server01:~$ netq show kubernetes pod label apache1 changes
     
@@ -213,8 +216,6 @@ Pipe to grep commands
     server01:10.0.0.31       default      apache1-86dd4b757f-5                  server03     app:apache1      Pending                       1h:17m:3s        Add
     server01:10.0.0.31       default      apache1-86dd4b757f-5 10.244.40.193    server03     app:apache1      Running  apache1:690b5e21b192 1h:16m:33s       Add
     server01:10.0.0.31       default      apache1-86dd4b757f-5                  server03     app:apache1      Pending                       1h:4m:16s        Add
-
-
 
 
 
