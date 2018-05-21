@@ -32,8 +32,11 @@ Download the NetQ TS VM from [Cumulus Website.](https://cumulusnetworks.com/down
 
 **Step 4:  Git clone this repository from your simulation server**
 
-cumulus@netq1:~$ git clone https://github.com/CumulusNetworks/cl_netq_demo_k8s
-cumulus@netq1:~$ cd cl_netq-demo-k8s
+
+  cumulus@netq1:~$git clone https://github.com/CumulusNetworks/cl_netq_demo_k8s
+  cumulus@netq1:~$ cd cl_netq-demo-k8s
+
+
 
 **Step 5:  Bring up the simulation**
 
