@@ -28,7 +28,7 @@ Download the NetQ TS VM from [Cumulus Website.](https://cumulusnetworks.com/down
 
 **Step 3:  Convert the vagrant NetQ TS to libvirt**
 
-    vagrant mutate cumulus-netq-telemetry-server-amd64-1.3.0-vagrant.box libvirt
+      cumulus@netq1:~$ vagrant mutate cumulus-netq-telemetry-server-amd64-1.3.0-vagrant.box libvirt
 
 **Step 4:  Git clone this repository from your simulation server**
 
