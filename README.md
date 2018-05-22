@@ -28,13 +28,13 @@ Download the NetQ TS VM from [Cumulus Website.](https://cumulusnetworks.com/down
 
 **Step 3:  Convert the vagrant NetQ TS to libvirt**
 
-      cumulus@netq1:~$ vagrant mutate cumulus-netq-telemetry-server-amd64-1.3.0-vagrant.box libvirt
+      cumulus@sim1:~$ vagrant mutate cumulus-netq-telemetry-server-amd64-1.3.0-vagrant.box libvirt
 
 **Step 4:  Git clone this repository from your simulation server**
 
 
-      cumulus@netq1:~$ git clone https://github.com/CumulusNetworks/cl_netq_demo_k8s
-      cumulus@netq1:~$ cd cl_netq-demo-k8s
+      cumulus@sim1:~$ git clone https://github.com/CumulusNetworks/cl_netq_demo_k8s
+      cumulus@sim1:~$ cd cl_netq-demo-k8s
 
 
 
@@ -42,13 +42,13 @@ Download the NetQ TS VM from [Cumulus Website.](https://cumulusnetworks.com/down
 
 As the oog-mgmt-server acts as DHCP server to the switches and hosts, bring those up first.  The --provision=libvirt only needs to be added the first time bringing up the topology on the simulation server.
 
-    cumulus@netq1:~/cl_netq-demo-k8s$ vagrant up oob-mgmt-server oob-mgmt-switch --provision=libvirt
+    cumulus@sim1:~/cl_netq-demo-k8s$ vagrant up oob-mgmt-server oob-mgmt-switch --provision=libvirt
     
-    cumulus@netq1:~/cl_netq-demo-k8s$ vagrant up spine01 spine02 leaf01 leaf02 leaf03 leaf04 server01 server02 server03 server04  --provision=libvirt
+    cumulus@sim1:~/cl_netq-demo-k8s$ vagrant up spine01 spine02 leaf01 leaf02 leaf03 leaf04 server01 server02 server03 server04  --provision=libvirt
 
 **Step 6:  Log into the simulation and run the kubernetes playbook**
 
-    cumulus@netq1:~/cl_netq_demo_k8s$ vagrant ssh oob-mgmt-server
+    cumulus@sim1:~/cl_netq_demo_k8s$ vagrant ssh oob-mgmt-server
 
 Password is *vagrant*
 
